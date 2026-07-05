@@ -64,8 +64,8 @@ export const AddShippingDialog = ({
     e.preventDefault();
     try {
       const url = shipping
-        ? "http://localhost:5000/api/shipping/updateaddress"
-        : "http://localhost:5000/api/shipping/addshipping";
+        ? `${process.env.NEXT_PUBLIC_API_URL}/api/shipping/updateaddress`
+        : `${process.env.NEXT_PUBLIC_API_URL}/api/shipping/addshipping`;
 
       const method = shipping ? "PUT" : "POST";
 

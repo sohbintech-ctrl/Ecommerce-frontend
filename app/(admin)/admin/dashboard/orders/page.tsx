@@ -61,10 +61,13 @@ const Orders = () => {
 //getallorder api call
   const getAllOrders = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/orders/admin", {
-        method: "GET",
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/orders/admin`,
+        {
+          method: "GET",
+          credentials: "include",
+        },
+      );
 
       const result = await res.json();
       if (result.success) {
@@ -82,16 +85,19 @@ const Orders = () => {
 
   //update order status api call
   const updateOrderStatus = async (orderId: number, status: string) => {
-    const res=await fetch(`http://localhost:5000/api/orders/admin/${orderId}`, {
-      method: "PUT",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/orders/admin/${orderId}`,
+      {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          status,
+        }),
       },
-      body: JSON.stringify({
-        status,
-      }),
-    });
+    );
     const result=await res.json();
     if(result.success){
       toast.success(result.message);

@@ -21,7 +21,7 @@ export default function ProductClient({ id }: { id:Number  }) {
   useEffect(() => {
     const getProduct = async () => {
       const res = await fetch(
-        `http://localhost:5000/api/product/products/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/product/products/${id}`,
         { credentials: "include" }
       );
 
@@ -33,7 +33,7 @@ export default function ProductClient({ id }: { id:Number  }) {
   }, [id]);
 
   const addToCart = async () => {
-    await fetch("http://localhost:5000/api/cart/addCart", {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cart/addCart`, {
       method: "POST",
       credentials: "include",
       headers: {

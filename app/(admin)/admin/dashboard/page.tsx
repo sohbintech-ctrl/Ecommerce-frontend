@@ -12,9 +12,12 @@ const Admin = () => {
   const[loading,setLoading]=useState(true);
   useEffect(() => {
     const checkUser = async () => {
-      const res = await fetch("http://localhost:5000/api/auth/profile", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/profile`,
+        {
+          credentials: "include",
+        },
+      );
 
       const data = await res.json();
       //console.log(data);

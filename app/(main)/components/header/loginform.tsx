@@ -26,14 +26,17 @@ const LoginForm = () => {
   //form handling
   const onSubmit = async (data: LoginUserData) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(data),
         },
-        credentials: "include",
-        body: JSON.stringify(data),
-      });
+      );
 
       const result = await res.json();
       //console.log("backend Response",result);

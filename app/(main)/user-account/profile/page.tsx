@@ -31,17 +31,20 @@ export const Profile=()=> {
 
 //handlesave. changing the value.
 const handleSave = async () => {
-  const res = await fetch("http://localhost:5000/api/auth/profile", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/auth/profile`,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        name,
+        email,
+      }),
     },
-    credentials: "include",
-    body: JSON.stringify({
-      name,
-      email,
-    }),
-  });
+  );
 
   const data = await res.json();
   console.log(data);

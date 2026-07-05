@@ -25,9 +25,12 @@ const [loading,setLoading]=useState(true);
 
   const getProducts=async()=>{
  try{
-  const res=await fetch("http://localhost:5000/api/product/products",{
-    credentials:"include",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/product/products`,
+    {
+      credentials: "include",
+    },
+  );
 
   const data=await res.json();
 

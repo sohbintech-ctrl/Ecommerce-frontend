@@ -30,9 +30,12 @@ export const AuthProvider = ({
  //get profile if session is there.
   const checkUser = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/profile", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/auth/profile`,
+        {
+          credentials: "include",
+        },
+      );
 
       const data = await res.json();
 
@@ -54,7 +57,7 @@ export const AuthProvider = ({
 
   //logout
   const logout = async () => {
-  await fetch("http://localhost:5000/api/auth/logout", {
+  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/logout`, {
     method: "POST",
     credentials: "include",
   });

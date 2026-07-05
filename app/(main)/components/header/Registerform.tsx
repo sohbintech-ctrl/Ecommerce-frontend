@@ -24,14 +24,17 @@ export const RegisterForm=({ setOpen }: RegisterFormProps)=>{
   //form handling
   const onSubmit = async (data: RegisterUserData) => {
   try {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(data),
       },
-      credentials:"include",
-      body: JSON.stringify(data),
-    });
+    );
 
     const result = await res.json();
     //console.log("Backend response:", result);

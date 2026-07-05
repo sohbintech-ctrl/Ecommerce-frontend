@@ -20,9 +20,12 @@ export const Shipping = () => {
 
   const getShipping = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/shipping", {
-        credentials: "include",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/shipping`,
+        {
+          credentials: "include",
+        },
+      );
 
       const data = await res.json();
       setShipping(data.address[0]);

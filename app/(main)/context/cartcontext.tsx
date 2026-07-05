@@ -33,7 +33,7 @@ export const CartProvider = ({
 
     const getCart = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/cart", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cart`, {
         credentials: "include",
       });
 
@@ -49,13 +49,16 @@ export const CartProvider = ({
 
 const deleteCart=async(cartId:any)=>{
     try{
-    const res=await fetch(`http://localhost:5000/api/cart/${cartId}`,{
-      method:"DELETE",
-      credentials:"include",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/cart/${cartId}`,
+      {
+        method: "DELETE",
+        credentials: "include",
         headers: {
-        "Content-Type": "application/json",
+          "Content-Type": "application/json",
+        },
       },
-    });
+    );
     
     const result=await res.json();
     if(result.success){
@@ -72,14 +75,16 @@ const deleteCart=async(cartId:any)=>{
 
   const increaseQuantity=async(cartId:number)=>{
    try{
-    const res=await fetch( `http://localhost:5000/api/cart/increase/${cartId}`,
-    {
-      method:"PUT",
-      credentials:"include",
-      headers:{
-        "Content-Type":"application/json",
-      }
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/cart/increase/${cartId}`,
+      {
+        method: "PUT",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      },
+    );
     const data=await res.json();
 
     if(data.success){
@@ -92,13 +97,16 @@ const deleteCart=async(cartId:any)=>{
   
   const decreaseQuantity=async(cartId:number)=>{
     try{
-        const res=await fetch(`http://localhost:5000/api/cart/decrease/${cartId}`,{
-      method:"PUT",
-      credentials:"include",
-      headers:{
-        "Content-type":"application/json",
-      }
-    })
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/cart/decrease/${cartId}`,
+          {
+            method: "PUT",
+            credentials: "include",
+            headers: {
+              "Content-type": "application/json",
+            },
+          },
+        );
     const data=await res.json();
     if(data.success){
      await getCart();

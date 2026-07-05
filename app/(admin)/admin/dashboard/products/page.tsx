@@ -70,11 +70,14 @@ const Products = () => {
     //console.log([...formData.entries()]);
 
     try {
-      const res = await fetch("http://localhost:5000/api/product/products", {
-        method: "POST",
-        credentials: "include",
-        body: formData,
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/product/products`,
+        {
+          method: "POST",
+          credentials: "include",
+          body: formData,
+        },
+      );
 
       const result = await res.json();
       toast.success(result.message);
@@ -98,9 +101,12 @@ const Products = () => {
   };
 
   const getProduct = async () => {
-    const res = await fetch("http://localhost:5000/api/product/products", {
-      credentials: "include",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/product/products`,
+      {
+        credentials: "include",
+      },
+    );
 
     const data = await res.json();
     console.log("data", data);
