@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CardContents from "./components/Cardcontent";
 import Chartsfirst from "./components/Charts";
 import ChartsSeconds from "./components/ChartsSecond";
-import LoadingSpinner from "./components/Loadingspinner";
+
 
 const Admin = () => {
   const router = useRouter();
@@ -39,9 +39,7 @@ const Admin = () => {
     checkUser();
   }, [router]);
 
-       if (loading) {
-         return <LoadingSpinner />;
-       }
+
 
   return (
     <div>
