@@ -7,7 +7,7 @@ import { useCart } from "../../context/cartcontext";
 import { useRouter } from "next/navigation";
 const Paymentmethod = () => {
   const [payment, setPayment] = useState("");
-   const { cart} = useCart();
+   const { cart,getCart} = useCart();
    const router = useRouter();
 
    useEffect(() => {
@@ -26,10 +26,11 @@ const Paymentmethod = () => {
           },
         );
         const result=await res.json();
-
+  
 
     if (result.success) {
       toast.success(result.message);
+    getCart();
     } else {
       toast.error(result.message);
     }
