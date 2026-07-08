@@ -41,7 +41,7 @@ const Paymentmethod = () => {
   }
   return (
     <>
-      <h1 className="font-bold text-2xl mt-5">Payment Method</h1>
+      <h1 className="font-bold text-sm md:text-2xl mt-5">Payment Method</h1>
       <div className="flex justify-between mt-5">
         <div className="space-y-3">
           <label className="flex items-center gap-3 cursor-pointer">
@@ -52,7 +52,7 @@ const Paymentmethod = () => {
               onChange={(e) => setPayment(e.target.value)}
             />
 
-            <span>Cash on Delivery</span>
+            <span className="text-sm md:text-base">Cash on Delivery</span>
           </label>
         </div>
 

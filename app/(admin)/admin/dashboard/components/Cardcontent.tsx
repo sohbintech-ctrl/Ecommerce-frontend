@@ -11,7 +11,7 @@ const CardContents = () => {
   return (
     <div className="p-4 md:pt-7 bg-[#f7f7f7]">
       {/*Card Dashboard */}
-      <h1 className="md:text-3xl font-semibold tracking-tight text-2xl">
+      <h1 className="md:text-3xl font-semibold tracking-tight text-md">
         Dashboard
       </h1>
       <p className="text-muted-foreground text-sm">

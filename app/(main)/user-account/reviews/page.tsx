@@ -33,7 +33,7 @@ export default function ReviewsPage() {
     <div className="space-y-6">
 
       {/* Title */}
-      <h1 className="text-2xl font-bold">My Reviews</h1>
+      <h1 className="md:text-2xl font-bold">My Reviews</h1>
 
       {/* Empty state */}
       {reviews.length === 0 ? (
@@ -49,17 +49,17 @@ export default function ReviewsPage() {
               className="border rounded-lg p-5 hover:shadow-md transition space-y-2 bg-white dark:bg-zinc-900"
             >
               {/* Product name */}
-              <p className="font-semibold">{rev.product}</p>
+              <p className="font-semibold text-sm md:text-base">{rev.product}</p>
 
               {/* Rating */}
               <div className="flex items-center gap-1 text-yellow-500">
                 {Array.from({ length: rev.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-500" />
+                  <Star key={i} className="w-3 md:w-4 h-4 fill-yellow-500" />
                 ))}
               </div>
 
               {/* Comment */}
-              <p className="text-gray-600">{rev.comment}</p>
+              <p className="text-gray-600 text-sm md:text-base">{rev.comment}</p>
 
               {/* Date */}
               <p className="text-sm text-gray-400">{rev.date}</p>

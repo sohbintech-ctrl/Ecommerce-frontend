@@ -6,7 +6,7 @@ import ShippingPage from "../components/shipping/ShippingForm";
 
 const CheckOut = () => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-5">
       <ShippingPage />
       <OrderSummary />
       <Paymentmethod/>

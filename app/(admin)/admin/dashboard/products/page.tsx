@@ -128,9 +128,9 @@ const Products = () => {
   return (
     <div className="bg-muted p-4">
       {/*product add management*/}
-      <div className="pt-7 flex justify-between">
+      <div className="md:pt-7 flex justify-between">
         <div>
-          <h1 className="md:text-3xl font-semibold tracking-tight text-2xl">
+          <h1 className="md:text-3xl font-semibold tracking-tight text-md">
             Products
           </h1>
           <p className="text-muted-foreground text-sm">
@@ -155,6 +155,7 @@ const Products = () => {
                   <Label htmlFor="name-1">Product Image</Label>
                   <Input
                     type="file"
+                    className="text-sm md:text-base"
                     accept="image/*"
                     onChange={(e) => setImage(e.target.files?.[0] || null)}
                   />
@@ -166,6 +167,7 @@ const Products = () => {
                     type="text"
                     placeholder="Enter product name"
                     value={product}
+                    className="text-sm md:text-base"
                     onChange={(e) => setProduct(e.target.value)}
                   />
                 </Field>
@@ -174,6 +176,7 @@ const Products = () => {
                   <Input
                     type="text"
                     placeholder="Enter SKU"
+                    className="text-sm md:text-base"
                     value={SKU}
                     onChange={(e) => setSKU(e.target.value)}
                   />
@@ -185,6 +188,7 @@ const Products = () => {
                     type="number"
                     placeholder="0.00"
                     value={discount}
+                    className="text-sm md:text-base"
                     onChange={(e) => setDiscount(e.target.value)}
                   />
                 </Field>
@@ -196,6 +200,7 @@ const Products = () => {
                       type="number"
                       placeholder="0.00"
                       value={price}
+                      className="text-sm md:text-base"
                       onChange={(e) => setPrice(e.target.value)}
                     />
                   </Field>
@@ -205,6 +210,7 @@ const Products = () => {
                       type="number"
                       placeholder="0.00"
                       value={stock}
+                      className="text-sm md:text-base"
                       onChange={(e) => setStock(e.target.value)}
                     />
                   </Field>
@@ -238,7 +244,7 @@ const Products = () => {
       </div>
 
       {/*shown the product*/}
-      <div className="mt-5 pt-4 bg-white border-2 rounded-2xl">
+      <div className="mt-5 pt-4 bg-white border-2 rounded-2xl w-90 md:w-auto">
         <div className="flex border-b-2 pb-3">
           <Search className="relative left-7 top-2 w-4 text-muted-foreground" />
           <Input
@@ -278,7 +284,9 @@ const Products = () => {
                   <TableCell className="hidden md:block">{p.SKU}</TableCell>
                   <TableCell>{p.category}</TableCell>
                   <TableCell>{p.price}</TableCell>
-                  <TableCell className="hidden md:block relative top-1.5">{p.stock}</TableCell>
+                  <TableCell className="hidden md:block relative top-1.5">
+                    {p.stock}
+                  </TableCell>
                   <TableCell>
                     <span
                       className={`px-2 py-1 rounded-full text-white text-xs ${

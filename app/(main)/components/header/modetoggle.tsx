@@ -12,6 +12,7 @@ export const ModeToggle=()=> {
         <Button 
         variant="ghost"
         size="icon"
+        className="relative top-1"
         onClick={()=>
           setTheme(theme==="dark"?"light":"dark")
         }

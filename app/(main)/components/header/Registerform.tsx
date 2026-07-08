@@ -56,7 +56,7 @@ export const RegisterForm=({ setOpen }: RegisterFormProps)=>{
   {/* Form */}
   <div>
     <div className="pb-6 md:pb-10">
-      <h1 className="text-2xl md:text-3xl font-semibold text-[#DB4444]">
+      <h1 className="text-xl md:text-3xl font-semibold text-[#DB4444]">
         Create an account
       </h1>
       <p className="text-sm md:text-base text-gray-600">Enter your details below</p>
@@ -67,7 +67,7 @@ export const RegisterForm=({ setOpen }: RegisterFormProps)=>{
         type="text"
         placeholder="Full Name"
         {...register("name")}
-        className={`border-0 border-b border-gray-300 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-black ${
+        className={`text-sm md:text-base border-0 border-b border-gray-300 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-black ${
           errors.name ? "border-destructive" : ""
         }`}
         required
@@ -80,7 +80,7 @@ export const RegisterForm=({ setOpen }: RegisterFormProps)=>{
         type="text"
         placeholder="Enter a Email"
         {...register("email")}
-        className={`border-0 border-b border-gray-300 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-black ${
+        className={`text-sm md:text-base border-0 border-b border-gray-300 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-black ${
           errors.email ? "border-destructive" : ""
         }`}
         required
@@ -93,7 +93,7 @@ export const RegisterForm=({ setOpen }: RegisterFormProps)=>{
         type="password"
         placeholder="Enter a Password"
         {...register("password")}
-        className={`border-0 border-b border-gray-300 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-black ${
+        className={`text-sm md:text-base border-0 border-b border-gray-300 rounded-none shadow-none focus-visible:ring-0 focus-visible:border-black ${
           errors.password ? "border-destructive" : ""
         }`}
         required

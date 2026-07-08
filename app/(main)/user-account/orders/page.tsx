@@ -47,7 +47,7 @@ useEffect(() => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">My Orders</h1>
+      <h1 className="md:text-2xl font-bold">My Orders</h1>
 
       {orders.length === 0 ? (
         <div className="flex flex-col items-center text-gray-500 mt-10">
@@ -63,8 +63,8 @@ useEffect(() => {
             >
               {/* Left */}
               <div>
-                <p className="font-semibold">Order #{order.orderId}</p>
-                <p className="font-semibold">{order.productName}</p>
+                <p className="font-semibold text-sm md:text-base">Order #{order.orderId}</p>
+                <p className="font-semibold text-sm md:text-base">{order.productName}</p>
                 <p className="text-sm text-gray-500">{order.createdAt}</p>
               </div>
 

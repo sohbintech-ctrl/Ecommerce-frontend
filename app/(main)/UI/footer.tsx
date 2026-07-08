@@ -82,7 +82,7 @@ const Footer=()=>{
   </div>
 
   <div className="text-center pt-6 text-zinc-600 text-sm">
-    <p>&copy; Copyright exclusive {new Date().getFullYear()}. All right reserved</p>
+    <p className="text-sm">&copy; Copyright exclusive {new Date().getFullYear()}. All right reserved</p>
   </div>
 </footer>
     )

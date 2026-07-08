@@ -118,10 +118,10 @@ const Orders = () => {
 
   return (
     <div className="bg-muted p-4 ">
-      <div className="pt-7 flex justify-between">
+      <div className="md:pt-7 flex justify-between">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">Orders</h1>
-          <p className="text-muted-foreground">
+          <h1 className="md:text-3xl font-semibold tracking-tight">Orders</h1>
+          <p className="text-muted-foreground text-sm md:text-base">
             View and manage customer orders
           </p>
         </div>
@@ -135,7 +135,7 @@ const Orders = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="search orders by ID, customer, or email..."
-            className="pl-9 py-5 bg-[#f1f3f5] border-none mr-4"
+            className="pl-9 py-5 bg-[#f1f3f5] border-none mr-4 text-sm md:text-base"
           />
         </div>
 

@@ -19,7 +19,7 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
-         mycolor: "bg-[#DB4444] text-white w-90 p-4",
+         mycolor: "bg-[#DB4444] text-white w-90 p-4 text-sm",
          mystock: "border border-input"
       },
       size: {

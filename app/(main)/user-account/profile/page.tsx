@@ -63,23 +63,23 @@ const handleSave = async () => {
     onSubmit={handleSave}
     className="w-full max-w-lg mx-auto shadow p-6 rounded-lg space-y-4 border"
   >
-    <h1 className="text-2xl font-semibold">Edit Your Profile</h1>
+    <h1 className="md:text-2xl font-semibold">Edit Your Profile</h1>
 
     <div className="flex flex-col gap-2">
-      <Label>Full Name</Label>
-      <Input value={name} onChange={(e) => setName(e.target.value)} />
+      <Label className="text-sm md:text-base">Full Name</Label>
+      <Input value={name} onChange={(e) => setName(e.target.value)} className="text-sm md:text-base" />
     </div>
 
     <div className="flex flex-col gap-2">
-      <Label>Email</Label>
-      <Input value={email} onChange={(e) => setEmail(e.target.value)} />
+      <Label className="text-sm md:text-base">Email</Label>
+      <Input value={email} onChange={(e) => setEmail(e.target.value)} className="text-sm md:text-base" />
     </div>
 
     <div className="flex flex-col gap-2">
-      <Label>Password Changes</Label>
-      <Input type="password" placeholder="Current Password" />
-      <Input type="password" placeholder="New Password" />
-      <Input type="password" placeholder="Confirm New Password" />
+      <Label className="text-sm md:text-base">Password Changes</Label>
+      <Input type="password" placeholder="Current Password" className="text-sm md:text-base"/>
+      <Input type="password" placeholder="New Password" className="text-sm md:text-base"/>
+      <Input type="password" placeholder="Confirm New Password" className="text-sm md:text-base"/>
     </div>
 
     <Button variant="mycolor" className="w-full md:w-auto">

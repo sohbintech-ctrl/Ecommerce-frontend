@@ -14,7 +14,7 @@ const AdminSideBar = () => {
   return (
     <div>
       <div className="mb-8 mt-5 ml-4">
-        <h1 className="font-bold text-xl">Admin Panel</h1>
+        <h1 className="font-bold text-lg md:text-xl">Admin Panel</h1>
         <p className="text-sm">Ecommerce Dashboard</p>
       </div>
 

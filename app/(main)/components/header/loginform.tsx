@@ -64,7 +64,7 @@ const LoginForm = () => {
       <div className="w-full max-w-md mx-auto px-4">
         {/* logo */}
         <div className="mt-10 pb-8">
-          <h1 className="text-2xl md:text-3xl font-bold text-[#DB4444]">
+          <h1 className="text-xl md:text-3xl font-bold text-[#DB4444]">
             Log in to Exclusive
           </h1>
           <p className="text-sm md:text-base text-gray-600">
@@ -108,7 +108,7 @@ const LoginForm = () => {
             Login
           </Button>
 
-          <p className="text-sm text-[#DB4444] cursor-pointer hover:underline relative top-3">
+          <p className="text-sm text-[#DB4444] cursor-pointer hover:underline relative top-3 pb-2">
             Forget password?
           </p>
         </div>

@@ -20,39 +20,39 @@ const isActive=(path:string)=>pathName===path;
           {/* Profile Section */}
  
     <div>
-      <h1 className="font-bold text-lg">My Account</h1>
+      <h1 className="font-bold md:text-lg">My Account</h1>
       <ul className="pt-3 ml-5 space-y-1">
 
         <Link href={base + "/profile"} className={`flex gap-2 ${isActive(base + "/profile")
           ? "text-[#DB4444]"
           :""
         }`}>
-        <User/>
-        <li>My Profile </li>
+        <User className="w-5"/>
+        <li className="text-sm md:text-base">My Profile </li>
         </Link>
         
          <Link href={base + "/shipping"}  className={`flex gap-2 ${isActive(base + "/shipping")
           ? "text-[#DB4444]"
           :""
         }`}>
-        <Truck/>
-        <li>Address Book</li>
+        <Truck className="w-5"/>
+        <li className="text-sm md:text-base">Address Book</li>
         </Link>
       
       <Link href={base + "/orders"}  className={`flex gap-2 ${isActive(base + "/orders")
           ? "text-[#DB4444]"
           :""
         }`}>
-        <Box/>
-        <li>Orders</li>
+        <Box className="w-5"/>
+        <li className="text-sm md:text-base">Orders</li>
         </Link>
       
       <Link href={base + "/reviews"} className={`flex gap-2 ${isActive(base + "/reviews")
           ? "text-[#DB4444]"
           :""
         }`}>
-        <Star/>
-        <li>Reviews</li>
+        <Star className="w-5"/>
+        <li className="text-sm md:text-base">Reviews</li>
         </Link>
       </ul>
     </div>

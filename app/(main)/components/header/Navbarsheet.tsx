@@ -46,12 +46,12 @@ export default function SheetDialog() {
     {/*card*/}
     {!user?(
         <Card size="sm" className="mx-auto w-full max-w-sm mt-8">
-      <CardContent className="font-bold text-lg">
+      <CardContent className="font-bold text-sm md:text-lg">
         <p>
           Hurry Up!
         </p>
         <p>
-          Register to get 10% discount on product for 3 days.
+          Register to get more discount on every products for 3 days.
         </p>
       </CardContent>
       <CardFooter className="flex justify-center"> 
@@ -62,11 +62,11 @@ export default function SheetDialog() {
       <Link href= {base +"/profile"} onClick={()=>setSheetOpen(false)}> 
       <div className="flex gap-2 mt-8 items-center hover:bg-gray-50 hover:dark:bg-zinc-800 py-2 rounded-lg">
         <div>
-        <User/>
+        <User className="w-5"/>
         </div>
         <div>
-        <p>{name}</p>
-        <p className="text-muted-foreground">{email}</p>
+        <p className="text-sm">{name}</p>
+        <p className="text-muted-foreground text-sm">{email}</p>
         </div>
       </div>
       </Link>
@@ -74,22 +74,22 @@ export default function SheetDialog() {
       
         <>
         <Link href="/contact" onClick={()=>setSheetOpen(false)}>
-           <SheetTitle className="flex gap-2 items-center border-b font-semibold rounded-lg py-2 hover:bg-gray-50 hover:dark:bg-zinc-800 ">
-                <MessageCircle/>
+           <SheetTitle className="flex gap-2 items-center border-b font-semibold rounded-lg py-2 hover:bg-gray-50 hover:dark:bg-zinc-800 text-sm md:text-base">
+                <MessageCircle className="w-5"/>
                 Message Us
                 </SheetTitle>
         </Link>
              
              <Link href="/" onClick={()=>setSheetOpen(false)}>
-               <SheetTitle className="flex gap-2 items-center font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2">
-                <Apple/>
+               <SheetTitle className="flex gap-2 items-center font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2 text-sm md:text-base">
+                <Apple className="w-5"/>
                 App Store
                 </SheetTitle>
               </Link>
 
              <Link href="/" onClick={()=>setSheetOpen(false)}>
-                  <SheetTitle className="flex gap-2 items-center border-b font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2">
-                <Play />
+                  <SheetTitle className="flex gap-2 items-center border-b font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2 text-sm md:text-base">
+                <Play className="w-5"/>
                 Play store
                 </SheetTitle>
               </Link>
@@ -97,22 +97,22 @@ export default function SheetDialog() {
            {user && (
             <>
             <Link href="/user-account/orders" onClick={()=>setSheetOpen(false)}>
-            <SheetTitle className="flex gap-2 items-center font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2">
-                <PackageOpen/>
+            <SheetTitle className="flex gap-2 items-center font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2 text-sm md:text-base">
+                <PackageOpen className="w-5"/> 
                 Orders
                 </SheetTitle>
            </Link>
 
               <Link href={base + "/profile"} onClick={()=>setSheetOpen(false)}>
-                <SheetTitle className="flex gap-2 items-center border-b font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2">
-                <Settings/>
+                <SheetTitle className="flex gap-2 items-center border-b font-semibold hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2 text-sm md:text-base">
+                <Settings className="w-5"/>
                Account Settings
                 </SheetTitle>
               </Link>
               
               <Link href="/" onClick={()=>setSheetOpen(false)} >
-                 <SheetTitle onClick={logout} className="flex gap-2 mt-4 items-center border-b font-semibold cursor-pointer hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2">
-                <LogOut/>
+                 <SheetTitle onClick={logout} className="flex gap-2 mt-4 items-center border-b font-semibold cursor-pointer hover:bg-gray-50 hover:dark:bg-zinc-800 rounded-lg py-2 text-sm md:text-base">
+                <LogOut className="w-5"/>
                 Logout
                 </SheetTitle>
               </Link>

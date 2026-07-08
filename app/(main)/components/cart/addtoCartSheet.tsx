@@ -36,12 +36,12 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetContent className="flex flex-col">
         <SheetHeader>
-          <SheetTitle>Your Cart</SheetTitle>
+          <SheetTitle className="text-sm md:text-base">Your Cart</SheetTitle>
         </SheetHeader>
 
-        <div className=" space-y-5 p-2 flex-1 overflow-y-auto">
+        <div className=" space-y-5 px-2 flex-1 overflow-y-auto">
           {cart.length === 0 ? (
-            <p>Your cart is empty.</p>
+            <p className="text-sm md:text-base">Your cart is empty.</p>
           ) : (
             cart.map((item) => (
               <div
@@ -49,7 +49,8 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
                 className="flex gap-4 border rounded-lg p-3"
               >
                 <Image
-                  src={`http://localhost:5000/uploads/${item.image}`}
+         
+                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/${item.image}`}
                   alt={item.productName}
                   width={70}
                   height={70}
@@ -58,9 +59,9 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
                 />
 
                 <div className="flex-1">
-                  <h2 className="font-semibold">{item.productName}</h2>
+                  <h2 className="font-semibold text-sm md:text-base">{item.productName}</h2>
 
-                  <p className="text-[#DB4444] font-bold">
+                  <p className="text-[#DB4444] font-bold text-sm md:text-base">
                     Rs.
                     {item.price * item.quantity -
                       (item.price * item.quantity * item.discount) / 100}

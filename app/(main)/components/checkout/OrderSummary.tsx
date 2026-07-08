@@ -17,7 +17,7 @@ const OrderSummary = () => {
   return (
     <div className="mt-10 ">
       <div>
-        <h1 className="font-bold text-2xl">Order Summary</h1>
+        <h1 className="font-bold md:text-2xl">Order Summary</h1>
       </div>
       <div className=" border rounded-lg shadow-sm space-y-2 mt-5 mb-5 p-4">
         {cart.map((item) => {
@@ -26,7 +26,7 @@ const OrderSummary = () => {
               <div className="flex gap-4">
                 <div>
                   <Image
-                    src={`http://localhost:5000/uploads/${item.image}`}
+                    src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/${item.image}`}
                     alt={item.productName}
                     width={70}
                     height={70}
@@ -36,7 +36,7 @@ const OrderSummary = () => {
                 </div>
 
                 <div>
-                  <h2 className="font-semibold">{item.productName}</h2>
+                  <h2 className="font-semibold text-sm">{item.productName}</h2>
 
                   <div className="flex gap-2 items-center">
                     <Button onClick={() => decreaseQuantity(item.cartId)}>

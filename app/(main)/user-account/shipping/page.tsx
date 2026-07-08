@@ -41,7 +41,7 @@ export const Shipping = () => {
   return (
     <div className=" mt-10">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold">Address Book</h1>
+        <h1 className="md:text-2xl font-bold">Address Book</h1>
 
         <Button onClick={() => setOpen(true)}>
           {shipping ? "Edit Address" : "+ Add Address"}
@@ -49,22 +49,22 @@ export const Shipping = () => {
       </div>
 
       {!shipping && (
-        <div className="border rounded-lg p-5 shadow-sm text-gray-500">
+        <div className="border rounded-lg p-5 shadow-sm text-gray-500 text-sm">
           No shipping address added. Please add your shipping address.
         </div>
       )}
       
       {shipping && (
         <div className="border rounded-lg p-5 shadow-sm space-y-2">
-          <h2 className="text-xl font-semibold">{shipping.fullName}</h2>
+          <h2 className="md:text-xl font-semibold">{shipping.fullName}</h2>
 
-          <p>{shipping.phone}</p>
+          <p className="text-sm md:text-base">{shipping.phone}</p>
 
-          <p>
+          <p className="text-sm md:text-base">
             {shipping.city}, {shipping.province}, {shipping.district}
           </p>
 
-          <p>{shipping.address}</p>
+          <p className="text-sm md:text-base">{shipping.address}</p>
         </div>
       )}
 

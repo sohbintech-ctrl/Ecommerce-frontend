@@ -99,7 +99,7 @@ export const AddShippingDialog = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>
+          <DialogTitle className="text-sm md:text-base">
             {shipping ? "Edit Shipping Address" : "Add Shipping Address"}
           </DialogTitle>
         </DialogHeader>
@@ -109,36 +109,42 @@ export const AddShippingDialog = ({
             placeholder="Full Name"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
+            className="text-sm md:text-base"
           />
 
           <Input
             type="number"
             placeholder="Phone Number"
             value={phone}
+            className="text-sm md:text-base"
             onChange={(e) => setPhone(e.target.value)}
           />
 
           <Input
             placeholder="Province"
             value={province}
+            className="text-sm md:text-base"
             onChange={(e) => setProvince(e.target.value)}
           />
 
           <Input
             placeholder="District"
             value={district}
+            className="text-sm md:text-base"
             onChange={(e) => setDistrict(e.target.value)}
           />
 
           <Input
             placeholder="City"
             value={city}
+            className="text-sm md:text-base"
             onChange={(e) => setCity(e.target.value)}
           />
 
           <Input
             placeholder="Street Address"
             value={streetAddress}
+            className="text-sm md:text-base"
             onChange={(e) => setStreetAddress(e.target.value)}
           />
 
