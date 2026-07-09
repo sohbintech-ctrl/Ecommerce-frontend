@@ -26,7 +26,7 @@ const OrderSummary = () => {
               <div className="flex gap-4">
                 <div>
                   <Image
-                    src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/${item.image}`}
+                    src={item.image}
                     alt={item.productName}
                     width={70}
                     height={70}
@@ -56,7 +56,7 @@ const OrderSummary = () => {
           );
         })}
       </div>
-      <PriceSummary/>
+      <PriceSummary />
     </div>
   );
 };

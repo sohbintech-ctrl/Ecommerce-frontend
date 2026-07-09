@@ -27,7 +27,9 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
     useCart();
 
   useEffect(() => {
-    getCart();
+   
+      getCart();
+    
   }, []);
 
   return (
@@ -49,9 +51,10 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
                 <Image
                   src={item.image}
                   alt={item.productName}
-                  width={400}
-                  height={400}
-                  className="max-w-full max-h-full object-contain"
+                  width={70}
+                  height={70}
+                  className="rounded object-contain"
+                  unoptimized
                 />
 
                 <div className="flex-1">
