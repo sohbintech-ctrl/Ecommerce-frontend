@@ -11,24 +11,20 @@ import LoginDialog from "../header/logindialog";
 import LoginForm from "../header/loginform";
 import AddtoCartDialog from "./addtocartdialog";
 
-
-
-export default function ProductClient({ id }: { id:Number  }) {
+export default function ProductClient({ id }: { id: Number }) {
   const [product, setProduct] = useState<any>(null);
   const [open, setOpen] = useState(false);
-   const{ user, setUser} = useAuth();
+  const { user, setUser } = useAuth();
 
-  const {cart,getCart,increaseQuantity,decreaseQuantity}=useCart();
+  const { cart, getCart, increaseQuantity, decreaseQuantity } = useCart();
   //console.log(cart);
-  const cartItem=cart.find(
-    (item:any)=>item.productId===Number(id)
-  );
+  const cartItem = cart.find((item: any) => item.productId === Number(id));
 
   useEffect(() => {
     const getProduct = async () => {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/product/products/${id}`,
-        { credentials: "include" }
+        { credentials: "include" },
       );
 
       const data = await res.json();
@@ -52,19 +48,18 @@ export default function ProductClient({ id }: { id:Number  }) {
     setOpen(false);
   };
 
-  if (!product) return <LoadingSpinner/>;
+  if (!product) return <LoadingSpinner />;
 
   return (
     <div className="max-w-7xl mx-auto py-10 px-4">
       <div className="grid md:grid-cols-2 gap-10">
         <div className="border rounded-xl p-8 flex justify-center items-center bg-white">
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/${product.image}`}
+            src={product.image}
             alt={product.productName}
-            width={500}
-            height={500}
-            className="object-contain"
-            unoptimized
+            width={400}
+            height={400}
+            className="max-w-full max-h-full object-contain"
           />
         </div>
 
@@ -98,8 +93,7 @@ export default function ProductClient({ id }: { id:Number  }) {
             </div>
           ) : !user ? (
             <>
-              
-              <AddtoCartDialog/>
+              <AddtoCartDialog />
             </>
           ) : (
             <Button onClick={addToCart} variant="mycolor" className="w-auto">

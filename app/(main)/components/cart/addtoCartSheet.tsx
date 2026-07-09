@@ -27,9 +27,7 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
     useCart();
 
   useEffect(() => {
-   
-      getCart();
-    
+    getCart();
   }, []);
 
   return (
@@ -49,17 +47,17 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
                 className="flex gap-4 border rounded-lg p-3"
               >
                 <Image
-         
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/${item.image}`}
+                  src={item.image}
                   alt={item.productName}
-                  width={70}
-                  height={70}
-                  className="rounded object-contain"
-                  unoptimized
+                  width={400}
+                  height={400}
+                  className="max-w-full max-h-full object-contain"
                 />
 
                 <div className="flex-1">
-                  <h2 className="font-semibold text-sm md:text-base">{item.productName}</h2>
+                  <h2 className="font-semibold text-sm md:text-base">
+                    {item.productName}
+                  </h2>
 
                   <p className="text-[#DB4444] font-bold text-sm md:text-base">
                     Rs.
@@ -88,7 +86,7 @@ export default function AddToCartSheet({ open, setOpen }: Props) {
 
         <SheetFooter>
           <Button
-            disabled={cart.length===0}
+            disabled={cart.length === 0}
             onClick={() => {
               setOpen(false);
               router.push("/checkout");

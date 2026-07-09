@@ -58,12 +58,11 @@ const Products = () => {
             <Card key={product.id} className="overflow-hidden">
               <div className="h-52 flex items-center justify-center bg-white p-4">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/${product.image}`}
+                  src={product.image}
                   alt={product.productName}
                   width={400}
                   height={400}
                   className="max-w-full max-h-full object-contain"
-                  unoptimized
                 />
               </div>
 
