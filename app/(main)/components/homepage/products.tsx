@@ -20,7 +20,7 @@ interface Product {
 
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+ 
 
   const getProducts = async () => {
     try {
@@ -43,10 +43,10 @@ const Products = () => {
 
   useEffect(() => {
     getProducts();
-    setLoading(false);
+  
   }, []);
 
-  if (loading) {
+  if (!products) {
     return <LoadingSpinner />;
   }
   return (
