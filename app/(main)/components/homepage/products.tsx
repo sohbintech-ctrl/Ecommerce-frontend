@@ -20,6 +20,8 @@ interface Product {
 
 const Products = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
  
 
   const getProducts = async () => {
@@ -38,6 +40,8 @@ const Products = () => {
       setProducts(data.product);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,7 +50,7 @@ const Products = () => {
   
   }, []);
 
-  if (!products) {
+  if (loading) {
     return <LoadingSpinner />;
   }
   return (
